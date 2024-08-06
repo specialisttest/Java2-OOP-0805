@@ -107,7 +107,6 @@ public class Course {
 		
 		//Course.counter++;
 		counter++;
-		
 	}
 	
 	public void print() {
