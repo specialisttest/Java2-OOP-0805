@@ -41,6 +41,8 @@ public class App {
 		c6.print();
 		
 		System.out.println( c5 == c6 ); // сравнение ссылок (только identity)
+		System.out.println( c5.equals(c6) ); // сравнение по полям
+		
 		
 		
 		var c7 = new Course("GIT Intro", 16);

@@ -1,8 +1,9 @@
 package ru.specialist;
 
-import java.util.Objects;
-
-public class Course {
+public class Course implements Comparable<Course> {
+	
+	
+	
 	// константы - значения определены на этапе компиляции
 	public static final String DEFAULT_TITLE = "Новый курс";
 	public static final int DEFAULT_LENGTH = 8;
@@ -119,32 +120,24 @@ public class Course {
 				getCode(), getTitle(), getLength()/*this.length*/);
 	}
 	
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null) return false;
-		if (getClass() != o.getClass()) return false;
-		
-		Course c = (Course)o;
-		return this.getTitle().equals(c.getTitle()) &&
-				this.getLength() == c.getLength() &&
-				this.organization.equals(c.organization);
-		
-		
-//	Может выдавать истину в том числе при сравнении Course с наследником Course		
-//		if (o instanceof Course c) {
-//			return this.getTitle().equals(c.getTitle()) &&
-//					this.getLength() == c.getLength() &&
-//					this.organization.equals(c.organization);
-//		}
-//		else
-//			return false;
-	}
 	
 	@Override
-	public int hashCode() {
-		return Objects.hash(getTitle(), getLength(), this.organization);
+	public String toString() {
+		return String.format("%-21s : %-3d", getTitle(), getLength());
 	}
-	
+
+	@Override
+	public int compareTo(Course c) {
+		// 1  this > c
+		// 0  this == c
+		// -1 this < c
+//		if (this.getLength() > c.getLength()) return 1;
+//		if (this.getLength() < c.getLength()) return -1;
+//		return 0;
+		
+		return c.getLength() - this.getLength(); // DESC
+		
+		//return this.getTitle().compareTo(c.getTitle());
+	}
 
 }
