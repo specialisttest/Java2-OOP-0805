@@ -1,0 +1,15 @@
+[
+	{
+		"type" : "Circle",
+		"x" : 100,
+		"y" : 200,
+		"radius" : 200,
+		"color" : "pink"
+	},
+	{
+		"type" : "Point",
+		"x" : 10,
+		"y" : 20,
+		"color" : "green"
+	}
+]
