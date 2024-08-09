@@ -30,10 +30,10 @@ public class App {
 		out.println(lm.toLocaleString());
 		out.println(f1.getCanonicalPath());
 		
-		File d1 = new File(dir1);
+		File d1 = new File(dir1); // ../
 		out.println(d1.getCanonicalPath());
 		
-		File[] files = d1.listFiles();
+		File[] files = d1.listFiles(  );
 		for(File file : files) {
 			if(file.isDirectory())
 				out.println(file.getName().toUpperCase());
